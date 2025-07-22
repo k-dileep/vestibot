@@ -1,0 +1,262 @@
+[
+    {
+      "id": 1,
+      "name": "Vestige Spirulina Capsules",
+      "category": "Health Supplement",
+      "price": 285,
+      "description": "Natural superfood rich in nutrients.",
+      "benefits": ["Boosts immunity", "Improves energy", "Detoxifies body"],
+      "symptoms": ["Fatigue", "Low immunity"],
+      "usage": "1-2 capsules twice a day after meals."
+    },
+    {
+      "id": 2,
+      "name": "Vestige Assure Hair Oil",
+      "category": "Personal Care",
+      "price": 235,
+      "description": "Herbal oil for healthy hair.",
+      "benefits": ["Reduces hair fall", "Promotes hair growth"],
+      "symptoms": ["Hair fall", "Dry scalp"],
+      "usage": "Apply on scalp at night, wash in morning."
+    },
+    {
+      "id": 3,
+      "name": "Vestige Calcium",
+      "category": "Health Supplement",
+      "price": 210,
+      "description": "Supports bone strength and joint health.",
+      "benefits": ["Strong bones", "Joint support"],
+      "symptoms": ["Joint pain", "Calcium deficiency"],
+      "usage": "1 tablet twice daily after food."
+    },
+    {
+      "id": 4,
+      "name": "Vestige Assure Face Wash",
+      "category": "Personal Care",
+      "price": 150,
+      "description": "Gentle cleanser for fresh skin.",
+      "benefits": ["Removes dirt", "Refreshes skin"],
+      "symptoms": ["Oily skin", "Acne"],
+      "usage": "Use twice daily on wet face."
+    },
+    {
+      "id": 5,
+      "name": "Vestige Flax Oil Capsules",
+      "category": "Health Supplement",
+      "price": 385,
+      "description": "Omega-3 rich oil for heart & brain.",
+      "benefits": ["Supports heart health", "Improves memory"],
+      "symptoms": ["High cholesterol", "Poor memory"],
+      "usage": "1 capsule twice daily after meals."
+    },
+    {
+      "id": 6,
+      "name": "Vestige Assure Hand Wash",
+      "category": "Home & Hygiene",
+      "price": 150,
+      "description": "Antibacterial hand wash with herbal extracts.",
+      "benefits": ["Kills germs", "Soft on hands"],
+      "symptoms": ["Dirty hands", "Rough skin"],
+      "usage": "Use as regular handwash."
+    },
+    {
+      "id": 7,
+      "name": "Vestige Protein Powder",
+      "category": "Nutrition",
+      "price": 850,
+      "description": "Protein blend for fitness and strength.",
+      "benefits": ["Builds muscle", "Boosts energy"],
+      "symptoms": ["Weakness", "Muscle loss"],
+      "usage": "1 scoop in milk/water once or twice daily."
+    },
+    {
+      "id": 8,
+      "name": "Vestige Aloe Vera Capsules",
+      "category": "Health Supplement",
+      "price": 320,
+      "description": "Helps digestion and skin health.",
+      "benefits": ["Heals gut", "Cleans skin"],
+      "symptoms": ["Constipation", "Skin rashes"],
+      "usage": "1 capsule twice daily after food."
+    },
+    {
+      "id": 9,
+      "name": "Vestige Invigo Energy Drink",
+      "category": "Beverage",
+      "price": 160,
+      "description": "Instant energy booster with taurine.",
+      "benefits": ["Reduces fatigue", "Boosts focus"],
+      "symptoms": ["Laziness", "Low stamina"],
+      "usage": "Mix 1 sachet in cold water."
+    },
+    {
+      "id": 10,
+      "name": "Vestige Assure Hair Serum",
+      "category": "Personal Care",
+      "price": 285,
+      "description": "Smooth serum for silky hair.",
+      "benefits": ["Reduces frizz", "Adds shine"],
+      "symptoms": ["Rough hair", "Dryness"],
+      "usage": "Apply small amount on damp hair."
+    },
+    {
+      "id": 11,
+      "name": "Vestige Foot Patch",
+      "category": "Detox",
+      "price": 495,
+      "description": "Detox patches for overnight foot application.",
+      "benefits": ["Removes toxins", "Improves sleep"],
+      "symptoms": ["Fatigue", "Toxin buildup"],
+      "usage": "Stick on soles at night, remove in morning."
+    },
+    {
+      "id": 12,
+      "name": "Vestige Noni Capsules",
+      "category": "Health Supplement",
+      "price": 695,
+      "description": "Supports immunity and cellular health.",
+      "benefits": ["Boosts stamina", "Cleans blood"],
+      "symptoms": ["Low energy", "Toxins in body"],
+      "usage": "1 capsule twice daily after meals."
+    },
+    {
+      "id": 13,
+      "name": "Vestige Krill Oil",
+      "category": "Omega Supplement",
+      "price": 1250,
+      "description": "Rich in Omega-3 with Astaxanthin.",
+      "benefits": ["Supports heart", "Improves joint health"],
+      "symptoms": ["Joint pain", "Cholesterol issues"],
+      "usage": "1 softgel daily after meal."
+    },
+    {
+      "id": 14,
+      "name": "Vestige Ganoderma Capsules",
+      "category": "Immunity Booster",
+      "price": 785,
+      "description": "Mushroom extract for immune strength.",
+      "benefits": ["Strengthens immunity", "Fights infection"],
+      "symptoms": ["Weak immune system", "Frequent cold"],
+      "usage": "1 capsule twice daily after food."
+    },
+    {
+      "id": 15,
+      "name": "Vestige CMD Drops",
+      "category": "Mineral Supplement",
+      "price": 200,
+      "description": "Concentrated mineral drops for health.",
+      "benefits": ["Improves hydration", "Balances minerals"],
+      "symptoms": ["Fatigue", "Electrolyte imbalance"],
+      "usage": "Add 2-3 drops in water twice daily."
+    },
+    {
+      "id": 16,
+      "name": "Vestige Assure Face Serum",
+      "category": "Skin Care",
+      "price": 485,
+      "description": "Hydrating serum for glowing skin.",
+      "benefits": ["Reduces dark spots", "Tightens skin"],
+      "symptoms": ["Dry skin", "Uneven tone"],
+      "usage": "Apply 2-3 drops on face at night."
+    },
+    {
+      "id": 17,
+      "name": "Vestige Aloe Vera Gel",
+      "category": "Skin & Hair Care",
+      "price": 195,
+      "description": "Pure aloe vera gel for skin and hair.",
+      "benefits": ["Cools skin", "Reduces acne"],
+      "symptoms": ["Burns", "Pimples"],
+      "usage": "Apply on skin or hair as needed."
+    },
+    {
+      "id": 18,
+      "name": "Vestige Tulsi Drops",
+      "category": "Herbal Drops",
+      "price": 195,
+      "description": "Concentrated extract of 5 types of Tulsi.",
+      "benefits": ["Fights infections", "Improves breathing"],
+      "symptoms": ["Cold", "Cough", "Allergies"],
+      "usage": "Add 2-3 drops in water or tea twice a day."
+    },
+    {
+      "id": 19,
+      "name": "Assure Cleanser + Toner",
+      "category": "Skin Care",
+      "price": 210,
+      "description": "2-in-1 cleanser and toner for daily use.",
+      "benefits": ["Cleans pores", "Tones skin"],
+      "symptoms": ["Oily skin", "Dirt accumulation"],
+      "usage": "Use with cotton on clean face morning & night."
+    },
+    {
+      "id": 20,
+      "name": "Vestige Neem Capsules",
+      "category": "Health Supplement",
+      "price": 230,
+      "description": "Neem extract for skin and blood purification.",
+      "benefits": ["Clears acne", "Purifies blood"],
+      "symptoms": ["Acne", "Skin infections"],
+      "usage": "1 capsule twice daily after meals."
+    },
+    {
+      "id": 21,
+      "name": "Vestige WinHemo",
+      "category": "Women's Health",
+      "price": 370,
+      "description": "Iron-rich supplement for women.",
+      "benefits": ["Increases hemoglobin", "Reduces tiredness"],
+      "symptoms": ["Anemia", "Weakness"],
+      "usage": "1 tablet daily after food."
+    },
+    {
+      "id": 22,
+      "name": "Vestige Kidney Health",
+      "category": "Health Supplement",
+      "price": 995,
+      "description": "Supports kidney detox and health.",
+      "benefits": ["Flushes toxins", "Improves filtration"],
+      "symptoms": ["Water retention", "Kidney discomfort"],
+      "usage": "1 capsule twice daily after food."
+    },
+    {
+      "id": 23,
+      "name": "Vestige L-Arginine LRG-9",
+      "category": "Performance Booster",
+      "price": 980,
+      "description": "Supports blood flow and stamina.",
+      "benefits": ["Enhances strength", "Improves circulation"],
+      "symptoms": ["Low stamina", "Poor circulation"],
+      "usage": "1 sachet in water before workout or bedtime."
+    },
+    {
+      "id": 24,
+      "name": "Vestige Sea Buckthorn",
+      "category": "Antioxidant Supplement",
+      "price": 600,
+      "description": "Rich in Omega, Vitamins, and Antioxidants.",
+      "benefits": ["Boosts immunity", "Improves skin glow"],
+      "symptoms": ["Vitamin deficiency", "Skin dullness"],
+      "usage": "1 capsule twice daily after food."
+    },
+    {
+      "id": 25,
+      "name": "Vestige Shatavari Max",
+      "category": "Women's Health",
+      "price": 550,
+      "description": "Herbal tonic for female health.",
+      "benefits": ["Balances hormones", "Supports lactation"],
+      "symptoms": ["Menstrual pain", "Hormonal issues"],
+      "usage": "1 capsule twice daily after meals."
+    },
+    {
+      "id": 26,
+      "name": "Vestige U-Control",
+      "category": "Urinary Health",
+      "price": 695,
+      "description": "Helps manage urinary infections and discomfort.",
+      "benefits": ["Supports bladder health", "Reduces UTIs"],
+      "symptoms": ["Frequent urination", "Burning sensation"],
+      "usage": "1 capsule twice daily with water."
+    }
+  ] 
