@@ -6,8 +6,7 @@ import { useAuth } from '../context/AuthContext';
 import { useRouter } from 'next/navigation';
 import Footer from '../components/Footer';
 
-// ImgBB API key
-const IMGBB_API_KEY = "b88dd9410969cb75966c37e0ed8162cb";
+// Remove hardcoded API key
 
 export default function ProfilePage() {
   const [isEditing, setIsEditing] = useState(false);
@@ -95,7 +94,7 @@ export default function ProfilePage() {
       setUploadError(null);
       
       const formData = new FormData();
-      formData.append('key', IMGBB_API_KEY);
+      formData.append('key', process.env.NEXT_PUBLIC_IMGBB_API_KEY);
       formData.append('image', file);
       
       const response = await fetch(`https://api.imgbb.com/1/upload`, {
