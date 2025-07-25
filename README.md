@@ -1,4 +1,26 @@
+# Vestibot: AI-Powered Vestige Product Assistant
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## About This Project
+
+Vestibot is an intelligent web application designed to assist users by providing expert information on Vestige health products. It features an AI-powered chatbot that acts as a virtual health expert, offering product recommendations based on user-described symptoms or health concerns. The application is built to be secure, user-friendly, and responsive.
+
+### Key Features
+
+- **AI Chatbot:** A sophisticated chatbot powered by the Groq Llama 3 model, trained to answer health-related questions using a curated list of Vestige products.
+- **User Authentication:** Secure user sign-up and login functionality implemented with Firebase Authentication.
+- **Protected Routes:** User profiles and other sensitive areas are protected, accessible only after logging in.
+- **Product Catalog:** A dedicated page to browse all available Vestige products.
+- **Responsive Design:** A clean and modern UI built with Tailwind CSS that works seamlessly across devices.
+
+### Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org/) (React)
+- **Authentication:** [Firebase](https://firebase.google.com/)
+- **AI/LLM:** [Groq API](https://groq.com/) (Llama 3)
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **Deployment:** [Vercel](https://vercel.com/)
 
 ## Getting Started
 
