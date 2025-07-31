@@ -165,8 +165,8 @@ export default function Home() {
               </button>
             )}
             <button onClick={handleSend} disabled={isLoading || !input.trim()} className="p-2 rounded-full text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors disabled:opacity-50">
-              <FiSend size={20} />
-            </button>
+            <FiSend size={20} />
+          </button>
           </div>
         </div>
         <p className="text-xs text-center text-gray-500 mt-2">

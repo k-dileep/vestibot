@@ -14,7 +14,6 @@ export default function ProfilePage() {
   const router = useRouter();
   const [editForm, setEditForm] = useState({
     displayName: '',
-    photoURL: ''
   });
   const [isUploading, setIsUploading] = useState(false);
   const [uploadError, setUploadError] = useState(null);
@@ -26,7 +25,6 @@ export default function ProfilePage() {
     if (user) {
       setEditForm({
         displayName: user.displayName || '',
-        photoURL: user.profile?.photoURL || user.photoURL || ''
       });
       setImageLoadError(false); // Reset error on user change
     }
@@ -107,7 +105,7 @@ export default function ProfilePage() {
       if (data.success) {
         const imageUrl = data.data.url;
         await updateUserProfile({ photoURL: imageUrl });
-        setEditForm(prev => ({ ...prev, photoURL: imageUrl }));
+        // No longer setting photoURL in local form state
         setImageLoadError(false);
       } else {
         setUploadError(data.error?.message || "Failed to upload image.");
@@ -122,11 +120,29 @@ export default function ProfilePage() {
   const triggerFileInput = () => fileInputRef.current?.click();
 
   const renderProfileImage = () => {
-    const photoURL = editForm.photoURL || user?.profile?.photoURL || user?.photoURL;
+    // Rely on the user object as the single source of truth, just like the Navbar.
+    const photoURL = user?.profile?.photoURL || user?.photoURL;
     
     if (photoURL && !imageLoadError) {
-      // Simple encoding for safety
-      const safePhotoURL = photoURL.includes(' ') ? encodeURI(photoURL) : photoURL;
+      let safePhotoURL;
+      try {
+        const urlObj = new URL(photoURL);
+        
+        if (urlObj.hostname === 'i.ibb.co') {
+          const pathParts = urlObj.pathname.split('/');
+          const lastPart = pathParts[pathParts.length - 1];
+          const encodedLastPart = encodeURIComponent(lastPart);
+          pathParts[pathParts.length - 1] = encodedLastPart;
+          
+          urlObj.pathname = pathParts.join('/');
+          safePhotoURL = urlObj.toString();
+        } else {
+          safePhotoURL = photoURL;
+        }
+      } catch (error) {
+        safePhotoURL = photoURL.includes(' ') ? encodeURI(photoURL) : photoURL;
+      }
+
       return (
           <Image
             src={safePhotoURL}
@@ -166,14 +182,14 @@ export default function ProfilePage() {
           
             {/* Profile Header */}
             <div className="flex flex-col items-center space-y-4">
-              <div 
-                className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-lg group cursor-pointer"
+              <div
+                className="relative w-32 h-32 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-lg group"
                 onClick={triggerFileInput}
               >
-                {renderProfileImage()}
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 flex items-center justify-center transition-opacity">
+                <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-50 transition-opacity cursor-pointer flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-white opacity-0 group-hover:opacity-100" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" /><path strokeLinecap="round" strokeLinejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                 </div>
+                {renderProfileImage()}
                 {isUploading && (
                   <div className="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center">
                     <div className="w-8 h-8 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
@@ -183,7 +199,7 @@ export default function ProfilePage() {
               <input type="file" ref={fileInputRef} className="hidden" accept="image/*" onChange={handleFileUpload} />
               
               <div className="text-center">
-                <h1 className="text-2xl font-bold text-gray-900 dark:text-white">{editForm.displayName || user.displayName || 'User'}</h1>
+                <h1 className="text-2xl font-bold text-gray-900 dark:text-white">{user.displayName || 'User'}</h1>
                 <p className="text-gray-600 dark:text-gray-400">{user.email}</p>
               </div>
               {uploadError && <p className="text-sm text-red-500 mt-2 text-center">{uploadError}</p>}
@@ -235,7 +251,10 @@ export default function ProfilePage() {
                     onClick={handleLogout}
                     className="w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2 bg-red-100 hover:bg-red-200 dark:bg-red-900/30 dark:hover:bg-red-900/50 text-red-600 dark:text-red-400 rounded-md transition-colors"
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013 3h4a3 3 0 013 3v1" /></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M0 0h24v24H0z" fill="none"/>
+                      <path d="M17 7l-1.41 1.41L18.17 11H8v2h10.17l-2.58 2.58L17 17l5-5zM4 5h8V3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8v-2H4V5z"/>
+                    </svg>
                     Logout
                   </button>
               </div>
