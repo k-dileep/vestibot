@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { useRouter } from 'next/navigation';
 
 const getErrorMessage = (error) => {
   // Log the complete error for debugging
@@ -39,6 +40,7 @@ export default function AuthModal({ isOpen, onClose }) {
   const [name, setName] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
 
   const { signup, login } = useAuth();
 
@@ -80,6 +82,7 @@ export default function AuthModal({ isOpen, onClose }) {
       }
       console.log('Authentication successful'); // Debug log
       onClose();
+      router.push('/'); // Redirect to the homepage
     } catch (error) {
       console.error('Authentication error details:', {
         code: error.code,
