@@ -14,19 +14,6 @@ const poppins = Poppins({
   variable: '--font-poppins',
 });
 
-function MainLayout({ children }) {
-  return (
-    <div className={`${poppins.variable} font-sans bg-gray-50 dark:bg-gray-900`}>
-      <div className="flex flex-col h-screen">
-        <Navbar />
-        <main className="flex-1 overflow-hidden">
-          {children}
-        </main>
-        <ConditionalFooter />
-      </div>
-    </div>
-  );
-}
 
 export default function ClientLayout({ children }) {
   return (
