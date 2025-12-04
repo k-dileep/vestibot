@@ -12,7 +12,7 @@ export async function POST(request) {
   Rules:
   1. Never recommend or mention products not in the provided JSON data.
   2. As an expert doctor, you must deeply understand the user's health concern from their prompt, even if it's an incomplete sentence or uses general terms.
-  3. To find the most relevant product(s), you must make a logical connection between the user's stated problem and the product's purpose, based on its 'name', 'description', and 'benefits' in the JSON. If multiple products are relevant, recommend all of them.
+  3. To find the most relevant product(s), you must make a logical connection between the user's stated problem and the product's purpose, based on its 'name', 'description', 'benefits', and 'symptoms' in the JSON. Consider broader medical connections - for example, leg pain could relate to joint health, muscle support, circulation, inflammation, or mineral deficiencies. If multiple products are relevant, recommend all of them.
   4. For each recommended product, follow this EXACT format with proper spacing:
      **Product: [Product Name]**
 
@@ -30,7 +30,7 @@ export async function POST(request) {
   7. If you cannot find a relevant product in the JSON, say: "Based on the information provided, I can only recommend products from the Vestige catalog. Please describe your health concern for a suitable product suggestion."`;
 
   const requestData = {
-    model: 'llama3-70b-8192',
+    model: 'meta-llama/Meta-Llama-3-70B-Instruct',
     messages: [
       { role: 'system', content: systemPromptText },
       ...messages
@@ -41,11 +41,11 @@ export async function POST(request) {
   };
 
   try {
-    const response = await fetch(process.env.GROQ_API_URL, {
+    const response = await fetch(process.env.HF_API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${process.env.GROQ_API_KEY}`,
+        'Authorization': `Bearer ${process.env.HF_TOKEN}`,
       },
       body: JSON.stringify(requestData),
     });
@@ -55,11 +55,11 @@ export async function POST(request) {
     if (data.choices && data.choices.length > 0) {
       return NextResponse.json({ reply: data.choices[0].message.content });
     } else {
-      console.error('Groq API response did not contain choices:', data);
+      console.error('Hugging Face API response did not contain choices:', data);
       return NextResponse.json({ error: 'Sorry, I could not get a response. Please try again.' }, { status: 500 });
     }
   } catch (error) {
-    console.error('Error calling Groq API:', error);
+    console.error('Error calling Hugging Face Inference Providers API:', error);
     return NextResponse.json({ error: 'An error occurred while communicating with the AI.' }, { status: 500 });
   }
 }
